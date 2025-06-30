@@ -1,13 +1,17 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Progress } from "@/components/ui/progress"
-import { Badge } from "@/components/ui/badge"
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
+import { useState } from "react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Progress } from "@/components/ui/progress";
+import { Badge } from "@/components/ui/badge";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 import {
   ArrowLeft,
   Search,
@@ -19,10 +23,38 @@ import {
   Download,
   Menu,
   X,
-} from "lucide-react"
+} from "lucide-react";
+interface PDF {
+  name: string;
+  url: string;
+}
+
+interface Lecture {
+  id: number;
+  title: string;
+  duration: string;
+  isCompleted: boolean;
+  isUnlocked: boolean;
+  videoUrl: string;
+  pdfs: PDF[];
+}
+
+interface Module {
+  id: number;
+  title: string;
+  isCompleted: boolean;
+  lectures: Lecture[];
+}
+
+interface CourseData {
+  id: number;
+  title: string;
+  progress: number;
+  modules: Module[];
+}
 
 // Mock data
-const courseData = {
+const courseData: CourseData = {
   id: 1,
   title: "React Fundamentals",
   progress: 35,
@@ -118,53 +150,72 @@ const courseData = {
       ],
     },
   ],
-}
+};
 
 export default function LearnPage({ params }: { params: { id: string } }) {
-  const [selectedLecture, setSelectedLecture] = useState(courseData.modules[0].lectures[0])
-  const [searchTerm, setSearchTerm] = useState("")
-  const [sidebarOpen, setSidebarOpen] = useState(false)
-  const [lectureCompleted, setLectureCompleted] = useState(selectedLecture.isCompleted)
+  const [selectedLecture, setSelectedLecture] = useState(
+    courseData.modules[0].lectures[0]
+  );
+  const [searchTerm, setSearchTerm] = useState("");
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [lectureCompleted, setLectureCompleted] = useState(
+    selectedLecture.isCompleted
+  );
 
-  const allLectures = courseData.modules.flatMap((module) => module.lectures)
-  const completedLectures = allLectures.filter((lecture) => lecture.isCompleted).length
-  const totalLectures = allLectures.length
+  const allLectures = courseData.modules.flatMap((module) => module.lectures);
+  const completedLectures = allLectures.filter(
+    (lecture) => lecture.isCompleted
+  ).length;
+  const totalLectures = allLectures.length;
 
   const filteredModules = courseData.modules
     .map((module) => ({
       ...module,
-      lectures: module.lectures.filter((lecture) => lecture.title.toLowerCase().includes(searchTerm.toLowerCase())),
+      lectures: module.lectures.filter((lecture) =>
+        lecture.title.toLowerCase().includes(searchTerm.toLowerCase())
+      ),
     }))
-    .filter((module) => module.lectures.length > 0)
+    .filter((module) => module.lectures.length > 0);
 
-  const handleLectureSelect = (lecture: any) => {
+  const handleLectureSelect = (lecture: Lecture) => {
+    //any type error
     if (lecture.isUnlocked) {
-      setSelectedLecture(lecture)
-      setLectureCompleted(lecture.isCompleted)
-      setSidebarOpen(false)
+      setSelectedLecture(lecture);
+      setLectureCompleted(lecture.isCompleted);
+      setSidebarOpen(false);
     }
-  }
-console.log(params);
+  };
+  console.log(params);
   const handleMarkComplete = () => {
-    setLectureCompleted(true)
+    setLectureCompleted(true);
     // In a real app, this would update the backend
 
     // Unlock next lecture
-    const currentIndex = allLectures.findIndex((l) => l.id === selectedLecture.id)
+    const currentIndex = allLectures.findIndex(
+      (l) => l.id === selectedLecture.id
+    );
     if (currentIndex < allLectures.length - 1) {
-      allLectures[currentIndex + 1].isUnlocked = true
+      allLectures[currentIndex + 1].isUnlocked = true;
     }
-  }
-
+  };
   return (
     <div className="min-h-screen bg-gray-50 flex">
       {/* Mobile Sidebar Overlay */}
-      <div className={`fixed inset-0 z-50 lg:hidden ${sidebarOpen ? "block" : "hidden"}`}>
-        <div className="fixed inset-0 bg-gray-600 bg-opacity-75" onClick={() => setSidebarOpen(false)} />
+      <div
+        className={`fixed inset-0 z-50 lg:hidden ${
+          sidebarOpen ? "block" : "hidden"
+        }`}>
+        <div
+          className="fixed inset-0 bg-gray-600 bg-opacity-75"
+          onClick={() => setSidebarOpen(false)}
+        />
         <div className="fixed inset-y-0 left-0 flex w-80 flex-col bg-white">
           <div className="flex h-16 items-center justify-between px-4 border-b">
             <h2 className="text-lg font-semibold">Course Content</h2>
-            <Button variant="ghost" size="sm" onClick={() => setSidebarOpen(false)}>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setSidebarOpen(false)}>
               <X className="h-5 w-5" />
             </Button>
           </div>
@@ -208,7 +259,11 @@ console.log(params);
         <header className="bg-white border-b px-4 py-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <Button variant="ghost" size="sm" className="lg:hidden" onClick={() => setSidebarOpen(true)}>
+              <Button
+                variant="ghost"
+                size="sm"
+                className="lg:hidden"
+                onClick={() => setSidebarOpen(true)}>
                 <Menu className="h-5 w-5" />
               </Button>
               <Link href={`/courses/${courseData.id}`}>
@@ -226,7 +281,10 @@ console.log(params);
               <span className="text-sm text-gray-600">
                 {completedLectures}/{totalLectures} completed
               </span>
-              <Progress value={(completedLectures / totalLectures) * 100} className="w-24" />
+              <Progress
+                value={(completedLectures / totalLectures) * 100}
+                className="w-24"
+              />
             </div>
           </div>
         </header>
@@ -248,7 +306,9 @@ console.log(params);
             <div className="flex items-center justify-between">
               <div>
                 <h2 className="text-2xl font-bold">{selectedLecture.title}</h2>
-                <p className="text-gray-600">Duration: {selectedLecture.duration}</p>
+                <p className="text-gray-600">
+                  Duration: {selectedLecture.duration}
+                </p>
               </div>
               <div className="flex items-center space-x-2">
                 {lectureCompleted ? (
@@ -274,10 +334,14 @@ console.log(params);
                 <CardContent>
                   <div className="space-y-2">
                     {selectedLecture.pdfs.map((pdf, index) => (
-                      <div key={index} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                      <div
+                        key={index}
+                        className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                         <div className="flex items-center">
                           <FileText className="h-4 w-4 text-red-600 mr-2" />
-                          <span className="text-sm font-medium">{pdf.name}</span>
+                          <span className="text-sm font-medium">
+                            {pdf.name}
+                          </span>
                         </div>
                         <Button size="sm" variant="outline" asChild>
                           <a href={pdf.url} download>
@@ -295,7 +359,18 @@ console.log(params);
         </div>
       </div>
     </div>
-  )
+  );
+}
+
+interface CourseSidebarProps {
+  courseData: CourseData;
+  searchTerm: string;
+  setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
+  filteredModules: Module[];
+  selectedLecture: Lecture;
+  handleLectureSelect: (lecture: Lecture) => void;
+  completedLectures: number;
+  totalLectures: number;
 }
 
 function CourseSidebar({
@@ -307,7 +382,9 @@ function CourseSidebar({
   handleLectureSelect,
   completedLectures,
   totalLectures,
-}: any) {
+}: CourseSidebarProps) {
+  //any type error
+  console.log(courseData);
   return (
     <div className="space-y-4">
       {/* Progress */}
@@ -319,7 +396,10 @@ function CourseSidebar({
             </div>
             <p className="text-sm text-gray-600">Course Progress</p>
           </div>
-          <Progress value={(completedLectures / totalLectures) * 100} className="mb-2" />
+          <Progress
+            value={(completedLectures / totalLectures) * 100}
+            className="mb-2"
+          />
           <p className="text-xs text-gray-600 text-center">
             {completedLectures} of {totalLectures} lectures completed
           </p>
@@ -339,56 +419,64 @@ function CourseSidebar({
 
       {/* Modules */}
       <div className="space-y-2">
-        {filteredModules.map((module, moduleIndex) => (
+        {filteredModules.map((module: Module, moduleIndex: number) => (
           <Collapsible key={module.id} defaultOpen={moduleIndex === 0}>
             <CollapsibleTrigger className="flex items-center justify-between w-full p-3 text-left bg-gray-100 rounded-lg hover:bg-gray-200">
               <div>
                 <h3 className="font-medium text-sm">{module.title}</h3>
                 <p className="text-xs text-gray-600">
-                  {module.lectures.filter((l: any) => l.isCompleted).length}/{module.lectures.length} completed
+                  {/* //any type error */}
+                  {module.lectures.filter((l: Lecture) => l.isCompleted).length}/
+                  {module.lectures.length} completed
                 </p>
               </div>
               <ChevronDown className="h-4 w-4" />
             </CollapsibleTrigger>
             <CollapsibleContent className="space-y-1 mt-2">
-              {module.lectures.map((lecture: any) => (
-                <button
-                  key={lecture.id}
-                  onClick={() => handleLectureSelect(lecture)}
-                  disabled={!lecture.isUnlocked}
-                  className={`w-full text-left p-3 rounded-lg text-sm transition-colors ${
-                    selectedLecture.id === lecture.id
-                      ? "bg-blue-100 text-blue-900 border border-blue-200"
-                      : lecture.isUnlocked
+              {module.lectures.map(
+                (
+                  lecture: Lecture //any type error
+                ) => (
+                  <button
+                    key={lecture.id}
+                    onClick={() => handleLectureSelect(lecture)}
+                    disabled={!lecture.isUnlocked}
+                    className={`w-full text-left p-3 rounded-lg text-sm transition-colors ${
+                      selectedLecture.id === lecture.id
+                        ? "bg-blue-100 text-blue-900 border border-blue-200"
+                        : lecture.isUnlocked
                         ? "hover:bg-gray-50"
                         : "opacity-50 cursor-not-allowed"
-                  }`}
-                >
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-2">
-                      {lecture.isCompleted ? (
-                        <CheckCircle className="h-4 w-4 text-green-600" />
-                      ) : lecture.isUnlocked ? (
-                        <PlayCircle className="h-4 w-4 text-blue-600" />
-                      ) : (
-                        <Lock className="h-4 w-4 text-gray-400" />
-                      )}
-                      <span className="font-medium">{lecture.title}</span>
+                    }`}>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-2">
+                        {lecture.isCompleted ? (
+                          <CheckCircle className="h-4 w-4 text-green-600" />
+                        ) : lecture.isUnlocked ? (
+                          <PlayCircle className="h-4 w-4 text-blue-600" />
+                        ) : (
+                          <Lock className="h-4 w-4 text-gray-400" />
+                        )}
+                        <span className="font-medium">{lecture.title}</span>
+                      </div>
+                      <span className="text-xs text-gray-500">
+                        {lecture.duration}
+                      </span>
                     </div>
-                    <span className="text-xs text-gray-500">{lecture.duration}</span>
-                  </div>
-                  {lecture.pdfs.length > 0 && (
-                    <div className="flex items-center mt-1 text-xs text-gray-500">
-                      <FileText className="h-3 w-3 mr-1" />
-                      {lecture.pdfs.length} resource{lecture.pdfs.length > 1 ? "s" : ""}
-                    </div>
-                  )}
-                </button>
-              ))}
+                    {lecture.pdfs.length > 0 && (
+                      <div className="flex items-center mt-1 text-xs text-gray-500">
+                        <FileText className="h-3 w-3 mr-1" />
+                        {lecture.pdfs.length} resource
+                        {lecture.pdfs.length > 1 ? "s" : ""}
+                      </div>
+                    )}
+                  </button>
+                )
+              )}
             </CollapsibleContent>
           </Collapsible>
         ))}
       </div>
     </div>
-  )
+  );
 }
