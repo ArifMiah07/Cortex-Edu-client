@@ -15,6 +15,9 @@ export default function HomePage() {
               <span className="ml-2 text-2xl font-bold text-gray-900">LMS</span>
             </div>
             <div className="flex space-x-4">
+              <Link href="/profile">
+                <Button variant="outline">Profile</Button>
+              </Link>
               <Link href="/auth/login">
                 <Button variant="outline">Login</Button>
               </Link>

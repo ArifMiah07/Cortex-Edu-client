@@ -100,11 +100,13 @@ const courseData = {
   ],
 };
 
-export default function CourseDetailPage({
-  params,
-}: {
-  params: { id: string };
-}) {
+interface CourseDetailPageProps {
+  params: {
+    id: string;
+  };
+}
+
+export default function CourseDetailPage({ params }: CourseDetailPageProps) {
   const [isModuleDialogOpen, setIsModuleDialogOpen] = useState(false);
   const [isLectureDialogOpen, setIsLectureDialogOpen] = useState(false);
   const [selectedModule, setSelectedModule] = useState<number | null>(null);
@@ -115,7 +117,7 @@ export default function CourseDetailPage({
     moduleId: 0,
   });
   const { toast } = useToast();
-  console.log(params,selectedModule);
+  console.log(params, selectedModule);
 
   const handleCreateModule = () => {
     toast("Module created", {
