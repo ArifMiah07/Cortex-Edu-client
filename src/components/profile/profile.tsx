@@ -15,16 +15,13 @@ export default function Profile() {
   };
 
   return (
-    <div>
-      {user ? (
-        <div>
-          <p>Name: {user.name}</p>
-          <p>Email: {user.email}</p>
-          <button onClick={handleLogout}>Logout</button>
-        </div>
-      ) : (
-        <button onClick={handleLogin}>Login</button>
-      )}
+    <div className="w-full min-h-screen items-center ">
+      <div>
+        <form>
+          <label htmlFor="name">Name</label>
+          <input name="name" type="text" />
+        </form>
+      </div>
     </div>
   );
 }
