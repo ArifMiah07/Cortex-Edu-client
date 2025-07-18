@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 // import useUserStore, { IUser } from "@/stores/useStore";
 
 export type TCourse = {
@@ -44,6 +46,7 @@ export default function Profile({data}: {data: TCourse[]}) {
         {
           courseData?.map((course: TCourse, index: number)=> <div key={course?._id || index}>
             <p> title: {course.title}</p>
+            <Image width={600} height={600} src={course.thumbnail || 'placeholder.png'} alt="course thumbnail" ></Image>
           </div>)
         }
       </div>
