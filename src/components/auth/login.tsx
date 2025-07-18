@@ -17,7 +17,7 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { Eye, EyeOff, User, Shield } from "lucide-react";
 import axios from "axios";
-import { redirect, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
@@ -40,6 +40,7 @@ export default function Login() {
           headers: {
             "Content-Type": "application/json",
           },
+          withCredentials: true,
         }
       );
       if (response.data.success) {
