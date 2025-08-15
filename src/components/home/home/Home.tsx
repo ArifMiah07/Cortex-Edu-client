@@ -1,6 +1,17 @@
+import Navbar from "@/components/shared/navbar/Navbar";
+
 export default function Home(){
     return(
-        // this is main section of Home page
-        <main></main>
+    <>
+        <header>
+            <Navbar></Navbar>
+        </header>
+        <main>
+            <h2>this is main section</h2>
+        </main>
+        <footer>
+            <h3>this is footer section</h3>
+        </footer>
+    </>
     )
 }
