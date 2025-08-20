@@ -122,7 +122,12 @@
 }
 
 .grad1 {
-  /* height: 100vh;
-  width: 100vw; */
-  background-image: radial-gradient(#2600FF, #00FFC8, #FF005E);
+  font-size: 4rem; /* adjust size */
+  font-weight: bold;
+  background: radial-gradient(circle, #2600FF, #00FFC8, #FF005E);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* for non-webkit browsers that support it */
+  text-fill-color: transparent;
 }
+
