@@ -78,7 +78,7 @@ export default function HeroSection() {
           more efficient.
         </p>
         <Link href={"/home"}>
-          <button className="w-[160px] h-[48px] bg-gradient-to-r from-indigo-500 via-sky-500 to-emerald-500 hover:from-[#FF005E] hover:via-[#00FFC8] hover:to-[#2600FF] hover:text-white rounded-xl text-xl font-bold">
+          <button className="relative w-[160px] h-[48px] bg-gradient-to-r from-[#FF005E] via-[#00FFC8] to-[#2600FF] bg-[length:200%_200%] bg-left hover:bg-right transition-[background-position] duration-700 ease-in-out rounded-lg text-xl font-bold text-white overflow-hidden">
             Explore
           </button>
         </Link>
