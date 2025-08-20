@@ -41,8 +41,7 @@ export default function Navbar() {
     </>
   );
 
-  const a = Array(10).fill(0);
-  console.log(a);
+  
 
   return (
     // This is Navbar

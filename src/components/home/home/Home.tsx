@@ -1,4 +1,5 @@
 import Navbar from "@/components/shared/navbar/Navbar";
+import HeroSection from "../hero/HeroSection";
 
 export default function Home(){
     return(
@@ -6,8 +7,8 @@ export default function Home(){
         <header>
             <Navbar></Navbar>
         </header>
-        <main>
-            <h2>this is main section</h2>
+        <main className="">
+            <HeroSection />
         </main>
         <footer>
             <h3>this is footer section</h3>
