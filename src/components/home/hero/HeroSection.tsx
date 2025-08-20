@@ -34,17 +34,19 @@ export default function HeroSection() {
         <Image
           src="/assets/images/earth-map-dotted.png"
           alt="Earth Map"
-          //   width={300}
-          //   height={300}
-          fill={true}
+          width={500}
+          height={500}
           className="opacity-70"
           priority={true}
         />
       </motion.div>
 
-      <motion.div className="absolute bottom-20 left-10 z-10 pointer-events-none">
+      <motion.div
+        className="absolute bottom-20 left-10 z-10 pointer-events-none"
+        animate={{ y: [0, -20, 0] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}>
         <Image
-          src="/assets/images/planet.png"
+          src="/assets/images/moon-planet.png"
           alt="Planet"
           width={180}
           height={180}
@@ -52,9 +54,12 @@ export default function HeroSection() {
         />
       </motion.div>
 
-      <motion.div className="absolute top-1/3 left-1/2 z-10 pointer-events-none">
+      <motion.div
+        className="absolute top-1/3 left-1/2 z-10 pointer-events-none"
+        animate={{ y: [0, -20, 0] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}>
         <Image
-          src="/assets/images/satellite.png"
+          src="/assets/images/blue-planet.png"
           alt="Satellite"
           width={100}
           height={100}
