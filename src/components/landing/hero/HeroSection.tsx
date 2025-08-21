@@ -43,7 +43,7 @@ export default function HeroSection() {
 
       <motion.div
         className="absolute bottom-20 left-10 z-10 pointer-events-none"
-        animate={{ y: [0, -20, 0] }}
+        animate={{ y: [0, -60, 0] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}>
         <Image
           src="/assets/images/moon-planet.png"
@@ -56,7 +56,7 @@ export default function HeroSection() {
 
       <motion.div
         className="absolute top-1/3 left-1/2 z-10 pointer-events-none"
-        animate={{ y: [0, -20, 0] }}
+        animate={{ y: [0, -80, 0] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}>
         <Image
           src="/assets/images/blue-planet.png"
@@ -78,7 +78,7 @@ export default function HeroSection() {
           more efficient.
         </p>
         <Link href={"/home"}>
-          <button className="relative w-[160px] h-[48px] bg-gradient-to-r from-[#FF005E] via-[#00FFC8] to-[#2600FF] bg-[length:200%_200%] bg-left hover:bg-right transition-[background-position] duration-700 ease-in-out rounded-lg text-xl font-bold text-white overflow-hidden">
+          <button className="relative w-[160px] h-[48px] bg-gradient-to-r from-[#FF005E] via-[#00FFC8] to-[#2600FF] bg-[length:200%_200%] bg-left hover:bg-right transition-[background-position] duration-700 ease-in-out rounded-lg text-xl font-bold text-white overflow-hidden cursor-pointer">
             Explore
           </button>
         </Link>
