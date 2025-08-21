@@ -124,10 +124,56 @@
 .grad1 {
   font-size: 4rem; /* adjust size */
   font-weight: bold;
-  background: radial-gradient(circle, #2600FF, #00FFC8, #FF005E);
+  background: radial-gradient(circle, #2600ff, #00ffc8, #ff005e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text; /* for non-webkit browsers that support it */
   text-fill-color: transparent;
 }
 
+.courseTitle {
+  font: 2rem;
+  font-weight: bold;
+  background: linear-gradient(#2600ff, #00ffc8, #ff005e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+@keyframes borderMove {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 0 0, 200% 0; 
+  }
+}
+
+.customBorder {
+  border: 4px solid transparent;
+  border-radius: 5px;
+  background: linear-gradient(white, white) padding-box,
+      linear-gradient(to right, #3acfd5, #3a4ed5, #ff00ff, #3acfd5) border-box;
+  background-size: 200% 100%;
+  animation: borderMove 3s linear infinite;
+}
+
+
+@keyframes moveGradient {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.customBorder2 {
+  border: 6px solid transparent;
+  border-radius: 12px;
+  background: linear-gradient(white, white) padding-box,
+    repeating-linear-gradient(30deg, #4d9f0c, #9198e5, #4d9f0c 20px) border-box;
+  background-size: 200% 100%;
+  animation: moveGradient 3s linear infinite;
+}
