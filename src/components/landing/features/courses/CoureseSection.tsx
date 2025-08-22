@@ -3,7 +3,14 @@
 import Link from "next/link";
 
 export default function CoursesSection() {
-  //
+  // Add necessary functionalities here
+  /**
+   * split code if if functionalities grows fast
+   * add proper comment for each functionality
+   * and also test with backend data 
+   * document the testing and testing result, also mention about any bug or difficulties
+   * 
+   */
 
   return (
     // this is courses section
@@ -14,7 +21,8 @@ export default function CoursesSection() {
      * keep clean design and follow user friendly interface
      * add call for action button
      * and add necessary functionalities
-     * 
+     * add web, app, and software development course
+     * add courses details in a details page for each
      */
     <section className="w-full min-h-[80vh]  flex-col items-center justify-center p-6 ">
       <h1 className="text-5xl font-bold text-center tracking-wide my-12 ">
