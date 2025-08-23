@@ -3,12 +3,19 @@
 import Link from "next/link";
 
 export default function CoursesSection() {
+  //
+
   return (
-      // this is courses section
-      /**
-       * this section will use in features section
-       * and 
-       */
+    // this is courses section
+    /**
+     * this section will use in features section
+     * and show three courses in our courses section
+     * use smooth animation
+     * keep clean design and follow user friendly interface
+     * add call for action button
+     * and add necessary functionalities
+     * 
+     */
     <section className="w-full min-h-[80vh]  flex-col items-center justify-center p-6 ">
       <h1 className="text-5xl font-bold text-center tracking-wide my-12 ">
         Our Courses
