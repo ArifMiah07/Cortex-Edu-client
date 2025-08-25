@@ -72,7 +72,7 @@ export default function HeroSection() {
         <h1 className="grad1 my-6 text-2xl lg:text-5xl 2xl:text-7xl font-bold">
           Cortex For Organized Learning
         </h1>
-        <p className="mb-4 text-gray-600 max-w-2xl">
+        <p className="mb-4 text-white max-w-2xl">
           Manage all your courses, assignments, and study resources in one
           place. Stay organized, access materials anytime, and make learning
           more efficient.

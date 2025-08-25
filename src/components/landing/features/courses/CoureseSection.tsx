@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 
 export default function CoursesSection() {
@@ -7,9 +8,9 @@ export default function CoursesSection() {
   /**
    * split code if if functionalities grows fast
    * add proper comment for each functionality
-   * and also test with backend data 
+   * and also test with backend data
    * document the testing and testing result, also mention about any bug or difficulties
-   * 
+   *
    */
 
   return (
@@ -35,7 +36,9 @@ export default function CoursesSection() {
         <div className="w-full rounded-xl p-6 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
           {/* // todo: use <Image Tag> */}
           <div className="w-full flex items-center justify-center">
-            <img
+            <Image
+              width={600}
+              height={500}
               className="rounded-lg"
               src="https://i.ytimg.com/vi/nTTmACuMoZ0/hqdefault.jpg"
               alt="course thumbnail"
@@ -46,7 +49,7 @@ export default function CoursesSection() {
               Learn Complete Web Development
             </h1>
             <button className="py-2 px-5 drop-shadow-lg text-white rounded-sm bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-500 ">
-              Let&apos;s Code
+              <Link href={`/course/web-development`}>Let&apos;s Code</Link>
             </button>
           </div>
         </div>
@@ -64,10 +67,14 @@ export default function CoursesSection() {
           </p>
           <div className="my-6 w-full flex flex-col lg:flex-row item-start gap-4 ">
             <button className="py-2 px-5 drop-shadow-lg text-white rounded-sm bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-500 ">
-              Explore
+              <Link href={`/course/web-development/course-details`}>
+                Explore
+              </Link>
             </button>
             <button className="py-2 px-5 drop-shadow-lg text-black rounded-lg customBorder ">
-              Success
+              <Link href={`/course/web-development/course-testimonials`}>
+                Success
+              </Link>
             </button>
           </div>
         </div>
@@ -78,7 +85,9 @@ export default function CoursesSection() {
         <div className="w-full rounded-xl p-6 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
           {/* // todo: use <Image Tag> */}
           <div className="w-full flex items-center justify-center">
-            <img
+            <Image
+              width={600}
+              height={500}
               className="rounded-lg"
               src="https://i.ytimg.com/vi/EplH-amHTtE/hqdefault.jpg"
               alt="course thumbnail"
@@ -89,7 +98,7 @@ export default function CoursesSection() {
               Learn Complete App Development
             </h1>
             <button className="py-2 px-5 drop-shadow-lg text-white rounded-sm bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-500 ">
-              Let&apos;s Code
+              <Link href={`/course/app-development`}>Let&apos;s Code</Link>
             </button>
           </div>
         </div>
@@ -107,10 +116,14 @@ export default function CoursesSection() {
           </p>
           <div className="my-6 w-full flex flex-col lg:flex-row item-start gap-4 ">
             <button className="py-2 px-5 drop-shadow-lg text-white rounded-sm bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-500 ">
-              Explore
+              <Link href={`/course/app-development/course-details`}>
+                Explore
+              </Link>
             </button>
             <button className="py-2 px-5 drop-shadow-lg text-black rounded-lg customBorder2 ">
-              Success
+              <Link href={`/course/app-development/course-testimonials`}>
+                Success
+              </Link>
             </button>
           </div>
         </div>
@@ -121,7 +134,9 @@ export default function CoursesSection() {
         <div className="w-full rounded-xl p-6 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
           {/* // todo: use <Image Tag> */}
           <div className="w-full flex items-center justify-center">
-            <img
+            <Image
+              width={600}
+              height={500}
               className="rounded-lg"
               src="https://i.ytimg.com/vi/Ubg3PenEdNw/hqdefault.jpg"
               alt="course thumbnail"
@@ -132,7 +147,7 @@ export default function CoursesSection() {
               Learn Complete Software Development
             </h1>
             <button className="py-2 px-5 drop-shadow-lg text-white rounded-sm bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-500 ">
-              Let&apos;s Code
+              <Link href={`/course/software-development`}>Let&apos;s Code</Link>
             </button>
           </div>
         </div>
@@ -149,13 +164,17 @@ export default function CoursesSection() {
             today and move closer to becoming a professional desktop software
             developer.
           </p>
+          {/* call for action btn */}
           <div className="my-6 w-full flex flex-col lg:flex-row item-start gap-4 ">
             <button className="py-2 px-5 drop-shadow-lg text-white rounded-sm bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-500 ">
-              <Link href={`/course/software-development`}>Explore</Link>
+              <Link href={`/course/software-development/course-details`}>
+                Explore
+              </Link>
             </button>
-
             <button className="py-2 px-5 drop-shadow-lg text-black rounded-lg customBorder ">
-              Success
+              <Link href={`/course/software-development/course-testimonials`}>
+                Success
+              </Link>
             </button>
           </div>
         </div>
