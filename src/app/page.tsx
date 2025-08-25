@@ -1,4 +1,5 @@
 import LandingPage from "@/components/landing/LandingPage";
+import FooterSection from "@/components/shared/footer/Footer";
 import Navbar from "@/components/shared/navbar/Navbar";
 
 export default function HomePage() {
@@ -11,7 +12,7 @@ export default function HomePage() {
         <LandingPage />
       </main>
       <footer>
-        <h3>this is footer section</h3>
+        <FooterSection />
       </footer>
     </>
   );

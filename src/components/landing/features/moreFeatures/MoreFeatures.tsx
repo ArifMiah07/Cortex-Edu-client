@@ -98,7 +98,7 @@ export default function MoreFeaturesSection() {
      * search option for modules and lessons
      *
      */
-    <section className="border border-gray-400 bg-purple-300 rounded drop-shadow-lg w-full min-h-[80vh]  flex-col items-center justify-center p-6 mb-24">
+    <section className="border border-gray-400 bg-purple-300 rounded drop-shadow-lg w-full min-h-[80vh]  flex-col items-center justify-center p-6">
       {/* section heading */}
       <div className="w-full flex flex-col items-center">
         <h1 className="text-5xl font-bold text-center tracking-wide my-6 ">
