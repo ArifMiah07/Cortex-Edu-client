@@ -25,7 +25,7 @@ export default function CoursesSection() {
      * add web, app, and software development course
      * add courses details in a details page for each
      */
-    <section className="w-full min-h-[80vh]  flex-col items-center justify-center p-6 ">
+    <section className="w-full min-h-[80vh] border border-gray-600 rounded-lg bg-white drop-shadow-lg flex-col items-center justify-center p-6 ">
       <h1 className="text-5xl font-bold text-center tracking-wide my-12 ">
         Our Courses
       </h1>
@@ -37,7 +37,7 @@ export default function CoursesSection() {
           {/* // todo: use <Image Tag> */}
           <div className="w-full flex items-center justify-center">
             <Image
-              width={600}
+              width={500}
               height={500}
               className="rounded-lg"
               src="https://i.ytimg.com/vi/nTTmACuMoZ0/hqdefault.jpg"
@@ -86,7 +86,7 @@ export default function CoursesSection() {
           {/* // todo: use <Image Tag> */}
           <div className="w-full flex items-center justify-center">
             <Image
-              width={600}
+              width={500}
               height={500}
               className="rounded-lg"
               src="https://i.ytimg.com/vi/EplH-amHTtE/hqdefault.jpg"
@@ -129,13 +129,13 @@ export default function CoursesSection() {
         </div>
       </div>
       {/* more course --- android development */}
-      <div className="w-full mt-24 flex flex-row items-center justify-between gap-5">
+      <div className="w-full my-24 flex flex-row items-center justify-between gap-5">
         {/* image */}
         <div className="w-full rounded-xl p-6 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
           {/* // todo: use <Image Tag> */}
           <div className="w-full flex items-center justify-center">
             <Image
-              width={600}
+              width={500}
               height={500}
               className="rounded-lg"
               src="https://i.ytimg.com/vi/Ubg3PenEdNw/hqdefault.jpg"

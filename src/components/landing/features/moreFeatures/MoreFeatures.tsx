@@ -9,7 +9,7 @@ import {
   LoaderPinwheel,
   SquarePen,
 } from "lucide-react";
-import { useState } from "react";
+import { JSX } from "react";
 
 //   data: todo: move them to lib folder
 export interface IFeatures {
@@ -21,66 +21,67 @@ export interface IFeatures {
 export const features: IFeatures[] = [
   {
     id: 1,
-    bgClr: 'bg-purple-100',
+    bgClr: "bg-purple-100",
     title: "Create Notes",
     description:
       "Easily jot down important points while studying and keep all your notes organized in one place.",
   },
   {
     id: 2,
-    bgClr: 'bg-red-100',
+    bgClr: "bg-red-100",
     title: "Bookmark Lessons",
     description:
       "Save lessons and create custom collections for quick access to your favorite content.",
   },
   {
     id: 3,
-    bgClr: 'bg-green-100',
+    bgClr: "bg-green-100",
     title: "Track Total Time",
     description:
       "Monitor how much time you’ve spent learning to stay on top of your schedule and goals.",
   },
   {
     id: 4,
-    bgClr: 'bg-yellow-100',
+    bgClr: "bg-yellow-100",
     title: "Progress Tracking",
     description:
       "See your course completion and learning milestones to measure your growth over time.",
   },
   {
     id: 5,
-    bgClr: 'bg-blue-100',
+    bgClr: "bg-blue-100",
     title: "Custom Playlists",
     description:
       "Build playlists with external links to organize learning resources exactly the way you want.",
   },
   {
     id: 6,
-    bgClr: 'bg-pink-100',
+    bgClr: "bg-pink-100",
     title: "Playlist Learning Progress",
     description:
       "Keep track of your progress for each playlist so you know exactly where you left off.",
   },
   {
     id: 7,
-    bgClr: 'bg-teal-100',
+    bgClr: "bg-teal-100",
     title: "Search Modules & Lessons",
     description:
       "Quickly find modules, lessons, or topics using our powerful search feature.",
   },
 ];
 
+const iconMap: Record<number, JSX.Element> = {
+  1: <SquarePen />,
+  2: <BookmarkPlus />,
+  3: <History />,
+  4: <ChartNoAxesCombined />,
+  5: <ListPlus />,
+  6: <LoaderPinwheel />,
+  7: <FileSearch />,
+};
+
 export default function MoreFeaturesSection() {
   // add functionalities
-  /**
-   *
-   *
-   */
-
-  // make a custom swiper
-  // current index state
-  const [currentIndex, setCurrentIndex] = useState<number>(0);
-  console.log(currentIndex, setCurrentIndex);
 
   return (
     // This is more features section
@@ -97,7 +98,7 @@ export default function MoreFeaturesSection() {
      * search option for modules and lessons
      *
      */
-    <section className="border more-features-clip border-gray-400 bg-purple-300 drop-shadow-2xl w-full min-h-[80vh]  flex-col items-center justify-center p-6 my-12 ">
+    <section className="border border-gray-400 bg-purple-300 rounded drop-shadow-lg w-full min-h-[80vh]  flex-col items-center justify-center p-6 mb-24">
       {/* section heading */}
       <div className="w-full flex flex-col items-center">
         <h1 className="text-5xl font-bold text-center tracking-wide my-6 ">
@@ -112,25 +113,12 @@ export default function MoreFeaturesSection() {
       <div className=" border border-gray-400 drop-shadow-lg rounded-xl bg-slate-50 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 items-center lg:items-start p-3 gap-5">
         {features?.map((feature, indx) => (
           <div
-            className={`flex flex-col items-star dark:bg-gray-800 rounded-xl shadow p-5 gap-3 ${feature.bgClr}`}
+            className={`flex flex-col items-start rounded-xl shadow p-5 gap-3 ${feature.bgClr} hover:scale-105 transition-transform duration-300`}
             key={feature.id || indx}>
-            <div className={`w-12 h-12 flex items-center justify-center text-white bg-indigo-500 rounded-full`}>
+            <div
+              className={`w-12 h-12 flex items-center justify-center text-white bg-indigo-500 rounded-full`}>
               {/* icon */}
-                {feature.id === 1 ? (
-                  <SquarePen />
-                ) : feature.id === 2 ? (
-                  <BookmarkPlus />
-                ) : feature.id === 3 ? (
-                  <History />
-                ) : feature.id === 4 ? (
-                  <ChartNoAxesCombined />
-                ) : feature.id === 5 ? (
-                  <ListPlus />
-                ) : feature.id === 6 ? (
-                  <LoaderPinwheel />
-                ) : (
-                  <FileSearch />
-                )}
+              {iconMap[feature.id as number]}
             </div>
             <div className="flex flex-col gap-2 ">
               {/* text */}

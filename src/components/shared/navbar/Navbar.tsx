@@ -61,10 +61,10 @@ export default function Navbar() {
         <div className="flex flex-row items-center justify-center gap-2 ">
           <Image
             className={""}
-            src={"/assets/images/cortex-dlogo.png"}
+            src={"/logo-icon.png"}
             alt="cortex logo image"
-            width={50}
-            height={50}
+            width={24}
+            height={24}
           />
           <span>
             <h1 className="text-lg text-black dark:text-white font-bold">

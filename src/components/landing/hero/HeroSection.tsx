@@ -25,7 +25,7 @@ export default function HeroSection() {
             | This section will use in home page
             | This section must have to be modern, clean, polished, soft high contrast
         --------------------------*/
-    <section className="relative w-full min-h-[80vh] bg-[url('/assets/images/hero-grid01.jpg')] bg-cover overflow-hidden">
+    <section className="relative w-full min-h-[100vh] bg-[url('/assets/images/hero-grid01.jpg')] bg-cover overflow-hidden">
       {/* floating decorative images */}
       <motion.div
         className="absolute top-10 right-10 z-10 pointer-events-none"
