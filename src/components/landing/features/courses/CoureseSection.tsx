@@ -49,7 +49,7 @@ export default function CoursesSection() {
               Learn Complete Web Development
             </h1>
             <button className="py-2 px-5 drop-shadow-lg text-white rounded-sm bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-500 ">
-              <Link href={`/course/web-development`}>Let&apos;s Code</Link>
+              <Link href={`/courses/web-development`}>Let&apos;s Code</Link>
             </button>
           </div>
         </div>
@@ -67,12 +67,12 @@ export default function CoursesSection() {
           </p>
           <div className="my-6 w-full flex flex-col lg:flex-row item-start gap-4 ">
             <button className="py-2 px-5 drop-shadow-lg text-white rounded-sm bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-500 ">
-              <Link href={`/course/web-development/course-details`}>
+              <Link href={`/courses/web-development/course-details`}>
                 Explore
               </Link>
             </button>
             <button className="py-2 px-5 drop-shadow-lg text-black rounded-lg customBorder ">
-              <Link href={`/course/web-development/course-testimonials`}>
+              <Link href={`/courses/web-development/course-testimonials`}>
                 Success
               </Link>
             </button>
@@ -98,7 +98,7 @@ export default function CoursesSection() {
               Learn Complete App Development
             </h1>
             <button className="py-2 px-5 drop-shadow-lg text-white rounded-sm bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-500 ">
-              <Link href={`/course/app-development`}>Let&apos;s Code</Link>
+              <Link href={`/courses/app-development`}>Let&apos;s Code</Link>
             </button>
           </div>
         </div>
@@ -116,12 +116,12 @@ export default function CoursesSection() {
           </p>
           <div className="my-6 w-full flex flex-col lg:flex-row item-start gap-4 ">
             <button className="py-2 px-5 drop-shadow-lg text-white rounded-sm bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-500 ">
-              <Link href={`/course/app-development/course-details`}>
+              <Link href={`/courses/app-development/course-details`}>
                 Explore
               </Link>
             </button>
             <button className="py-2 px-5 drop-shadow-lg text-black rounded-lg customBorder2 ">
-              <Link href={`/course/app-development/course-testimonials`}>
+              <Link href={`/courses/app-development/course-testimonials`}>
                 Success
               </Link>
             </button>
@@ -147,7 +147,7 @@ export default function CoursesSection() {
               Learn Complete Software Development
             </h1>
             <button className="py-2 px-5 drop-shadow-lg text-white rounded-sm bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-500 ">
-              <Link href={`/course/software-development`}>Let&apos;s Code</Link>
+              <Link href={`/courses/software-development`}>Let&apos;s Code</Link>
             </button>
           </div>
         </div>
@@ -167,12 +167,12 @@ export default function CoursesSection() {
           {/* call for action btn */}
           <div className="my-6 w-full flex flex-col lg:flex-row item-start gap-4 ">
             <button className="py-2 px-5 drop-shadow-lg text-white rounded-sm bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-500 ">
-              <Link href={`/course/software-development/course-details`}>
+              <Link href={`/courses/software-development/course-details`}>
                 Explore
               </Link>
             </button>
             <button className="py-2 px-5 drop-shadow-lg text-black rounded-lg customBorder ">
-              <Link href={`/course/software-development/course-testimonials`}>
+              <Link href={`/courses/software-development/course-testimonials`}>
                 Success
               </Link>
             </button>
