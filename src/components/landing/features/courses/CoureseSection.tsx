@@ -129,7 +129,7 @@ export default function CoursesSection() {
         </div>
       </div>
       {/* more course --- android development */}
-      <div className="w-full my-24 flex flex-row items-center justify-between gap-5">
+      <div className="w-full mt-24 flex flex-row items-center justify-between gap-5">
         {/* image */}
         <div className="w-full rounded-xl p-6 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
           {/* // todo: use <Image Tag> */}

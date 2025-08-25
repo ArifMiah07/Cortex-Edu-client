@@ -97,19 +97,19 @@ export default function MoreFeaturesSection() {
      * search option for modules and lessons
      *
      */
-    <section className="w-full min-h-[80vh]  flex-col items-center justify-center p-6 ">
+    <section className="border more-features-clip border-gray-400 bg-purple-300 drop-shadow-2xl w-full min-h-[80vh]  flex-col items-center justify-center p-6 my-12 ">
       {/* section heading */}
       <div className="w-full flex flex-col items-center">
-        <h1 className="text-5xl font-bold text-center tracking-wide mb-4 ">
+        <h1 className="text-5xl font-bold text-center tracking-wide my-6 ">
           More Features
         </h1>
-        <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto text-center leading-relaxed">
+        <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto text-center leading-relaxed mb-6">
           Explore extra tools and options that make learning more organized,
           engaging, and effective.
         </p>
       </div>
       {/* content */}
-      <div className=" border border-red-400 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 items-center lg:items-start p-3 gap-5">
+      <div className=" border border-gray-400 drop-shadow-lg rounded-xl bg-slate-50 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 items-center lg:items-start p-3 gap-5">
         {features?.map((feature, indx) => (
           <div
             className={`flex flex-col items-star dark:bg-gray-800 rounded-xl shadow p-5 gap-3 ${feature.bgClr}`}
@@ -132,10 +132,10 @@ export default function MoreFeaturesSection() {
                   <FileSearch />
                 )}
             </div>
-            <div>
+            <div className="flex flex-col gap-2 ">
               {/* text */}
-              <h1>{feature.title}</h1>
-              <p>{feature.description}</p>
+              <h1 className="text-md font-medium ">{feature.title}</h1>
+              <p className="text-md text-gray-700">{feature.description}</p>
             </div>
           </div>
         ))}
