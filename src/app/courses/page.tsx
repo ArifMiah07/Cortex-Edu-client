@@ -1,28 +1,63 @@
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
+import Link from "next/link";
 
-export default function CoursesPage(){
-    //
-    const data =[
-        {id: 1, slug: "web development",},
-        {id: 2, slug: "app development",},
-        {id: 3, slug: "software development",},
+export default function CoursesPage() {
+  //
+  const data = [
+    {
+      id: 1,
+      slug: "web-development",
+      title: "Full-Stack Web Development",
+      description:
+        "Learn to build modern websites and web apps using HTML, CSS, JavaScript, React, and Node.js.",
+      mentor: "John Doe",
+      rating: 4.8,
+      totalEnrollment: 1200,
+      courseDuration: "6 months",
+      price: 299,
+    },
+    {
+      id: 2,
+      slug: "app-development",
+      title: "Mobile App Development",
+      description:
+        "Master Android and iOS development with React Native and Flutter.",
+      mentor: "Sarah Khan",
+      rating: 4.6,
+      totalEnrollment: 950,
+      courseDuration: "5 months",
+      price: 349,
+    },
+    {
+      id: 3,
+      slug: "software-development",
+      title: "Software Development Fundamentals",
+      description:
+        "Understand core programming concepts, data structures, and algorithms for software engineering.",
+      mentor: "David Smith",
+      rating: 4.7,
+      totalEnrollment: 800,
+      courseDuration: "4 months",
+      price: 199,
+    },
+  ];
 
-    ]
-    return(
-        <>
-        <h1>this is courses pages</h1>
-        <div>
-            {
-                data.map((d, i)=> <div key={i}>
-                    <h1>{d.slug}</h1>
-                    <Link href={`/courses/${d.slug}`}>
-                    <Button>View Course</Button>
-                  </Link>
-                </div> )
-            }
-        </div>
-        </>
-
-    )
+  return (
+    <>
+      <h1>All Courses</h1>
+      <p>Discover and enroll in courses that match your interests</p>
+      <div>
+        <span>search</span>
+      </div>
+      <div>
+        {data.map((d, i) => (
+          <div key={i}>
+            <h1>{d.slug}</h1>
+            <Link href={`/courses/${d.slug}`}>
+              <button>View Course</button>
+            </Link>
+          </div>
+        ))}
+      </div>
+    </>
+  );
 }
