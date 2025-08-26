@@ -194,7 +194,7 @@ export default function CoursesPage() {
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-2xl font-bold text-blue-600">${course.price}</span>
-                  <Link href={`/courses/${course.id}`}>
+                  <Link href={`/course/${course.id}`}>
                     <Button>View Course</Button>
                   </Link>
                 </div>
