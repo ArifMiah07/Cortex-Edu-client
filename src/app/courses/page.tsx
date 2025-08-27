@@ -1,8 +1,20 @@
-import Link from "next/link";
+import Courses from "@/components/courses/Courses";
 
 export default function CoursesPage() {
   //
-  const data = [
+  type TCourseData = {
+    id: number;
+    slug: string;
+    title: string;
+    description: string;
+    mentor: string;
+    rating: number;
+    totalEnrollment: number;
+    courseDuration: string;
+    price: number;
+
+  }
+  const data : TCourseData[]= [
     {
       id: 1,
       slug: "web-development",
@@ -49,14 +61,7 @@ export default function CoursesPage() {
         <span>search</span>
       </div>
       <div>
-        {data.map((d, i) => (
-          <div key={i}>
-            <h1>{d.slug}</h1>
-            <Link href={`/courses/${d.slug}`}>
-              <button>View Course</button>
-            </Link>
-          </div>
-        ))}
+        <Courses data={data} />
       </div>
     </>
   );
