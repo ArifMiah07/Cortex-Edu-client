@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import { Toaster } from "sonner";
 
 import "./globals.css";
+import Navbar from "@/components/shared/navbar/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,6 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} `}>
+        <header>{/* <Navbar></Navbar> */}</header>
         {children}
         <Toaster richColors />
       </body>
