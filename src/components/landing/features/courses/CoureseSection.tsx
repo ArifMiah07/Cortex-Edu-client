@@ -147,7 +147,9 @@ export default function CoursesSection() {
               Learn Complete Software Development
             </h1>
             <button className="py-2 px-5 drop-shadow-lg text-white rounded-sm bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-500 ">
-              <Link href={`/courses/software-development`}>Let&apos;s Code</Link>
+              <Link href={`/courses/software-development`}>
+                Let&apos;s Code
+              </Link>
             </button>
           </div>
         </div>
@@ -179,13 +181,18 @@ export default function CoursesSection() {
           </div>
         </div>
       </div>
+      {/* view all courses */}
+      <div className="w-full my-12 flex flex-col items-center justify-center p-5">
+        <button className="text-black text-md lg:text-xl font-medium lg:font-bold border border-green-500 bg-green-50 px-3 py-2 rounded-sm hover:border hover:border-green-600 hover:bg-green-400 hover:text-white ">
+          <Link href={`/courses`}> View All Courses </Link>
+        </button>
+      </div>
     </section>
   );
 }
 
-
 // Issues:
 /**
  * [x] mobile responsiveness was missing --<working>--
- * 
+ *
  */
