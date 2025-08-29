@@ -61,8 +61,13 @@ export default function Courses({ data }: { data: TCourseData[] }) {
               </span>
             </div>
             {/* action btn */}
-            <div className="flex flex-row items-center gap-3 justify-between mt-2 ">
-              <p className="text-xl text-yellow-400 font-bold">${d.price}</p>
+            <div className="flex flex-col lg:flex-row items-center gap-3 justify-between mt-2 ">
+              <p className="text-xl text-green-500 font-bold">
+                <span className="text-green-500 font-normal text-sm">$</span>
+                <span className="text-green-500 font-bold text-lg">
+                  {d.price}
+                </span>
+              </p>
               <button className="px-3 py-1 hover:bg-green-500 buy-course-custom-border text-black ">
                 <Link href={`/courses/${d.slug}`}>View Course</Link>
               </button>

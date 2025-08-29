@@ -31,7 +31,7 @@ export default function CoursesSection() {
       </h1>
       {/* content */}
       {/* web development course section */}
-      <div className="flex flex-row items-center justify-between gap-5">
+      <div className="flex flex-col lg:flex-row items-center justify-between gap-5">
         {/* image */}
         <div className="w-full rounded-xl p-6 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
           {/* // todo: use <Image Tag> */}
@@ -80,7 +80,7 @@ export default function CoursesSection() {
         </div>
       </div>
       {/* more course --- android development */}
-      <div className="w-full my-24 flex flex-row-reverse items-center justify-between gap-5">
+      <div className="w-full my-24 flex flex-col lg:flex-row-reverse items-center justify-between gap-5">
         {/* image */}
         <div className="w-full rounded-xl p-6 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
           {/* // todo: use <Image Tag> */}
@@ -129,7 +129,7 @@ export default function CoursesSection() {
         </div>
       </div>
       {/* more course --- android development */}
-      <div className="w-full my-24 flex flex-row items-center justify-between gap-5">
+      <div className="w-full my-24 flex flex-col lg:flex-row items-center justify-between gap-5">
         {/* image */}
         <div className="w-full rounded-xl p-6 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
           {/* // todo: use <Image Tag> */}
@@ -182,3 +182,10 @@ export default function CoursesSection() {
     </section>
   );
 }
+
+
+// Issues:
+/**
+ * [x] mobile responsiveness was missing --<working>--
+ * 
+ */
