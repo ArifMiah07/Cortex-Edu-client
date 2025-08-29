@@ -22,7 +22,7 @@ export default function Courses({ data }: { data: TCourseData[] }) {
   return (
     <div>
       <h1>this is courses page</h1>
-      <div className="border border-red-500 p-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className=" p-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {data.map((d, i) => (
           <div
             className=" w-full flex flex-col justify-between course-card-custom-border p-5 "
@@ -70,8 +70,6 @@ export default function Courses({ data }: { data: TCourseData[] }) {
                 <Link href={`/courses/${d.slug}/payment`}>Buy Course</Link>
               </button>
             </div>
-            {/* <div className="w-full flex flex-col ">
-            </div> */}
           </div>
         ))}
       </div>
