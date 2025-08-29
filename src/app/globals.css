@@ -181,3 +181,38 @@
 .more-features-clip{
   clip-path: polygon(20% 0%, 80% 0%, 100% 0, 100% 80%, 100% 100%, 20% 100%, 0 100%, 0 0);
 }
+
+@keyframes animateBuyCourseBorder {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+
+/* buy course button -- odd */
+:nth-child(odd).buy-course-custom-border{
+  border: 2px solid transparent;
+  border-radius: 16px;
+  background: linear-gradient(white, white) padding-box, repeating-linear-gradient(45deg, purple, green, yellow 20px) border-box;
+  background-size: 200% 100%;
+  animation: animateBuyCourseBorder 3s linear infinite;
+}
+/* buy course button -- even */
+:nth-child(even).buy-course-custom-border{
+  border: 2px solid transparent;
+  border-radius: 16px;
+  background: linear-gradient(white, white) padding-box, repeating-linear-gradient(45deg, blue, red, pink 20px) border-box;
+  background-size: 200% 100%;
+  animation: animateBuyCourseBorder 3s linear infinite;
+}
+/* style buy course even */
+:hover:nth-child(even).buy-course-custom-border{
+  background: linear-gradient(#14B8A6, #14B8A6) padding-box, repeating-linear-gradient(45deg, purple, green, yellow 20px) border-box;
+}
+/* style buy course odd */
+:hover:nth-child(odd).buy-course-custom-border{
+  background: linear-gradient(#A855F7, #A855F7) padding-box, repeating-linear-gradient(45deg, purple, green, yellow 20px) border-box;
+}
