@@ -182,6 +182,37 @@
   clip-path: polygon(20% 0%, 80% 0%, 100% 0, 100% 80%, 100% 100%, 20% 100%, 0 100%, 0 0);
 }
 
+
+/* animation for course card border*/
+@keyframes animateCourseCardBorder {
+  0%{
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 200 0;
+  }
+}
+
+.course-card-custom-border{
+  border: 1px solid #22C55E;
+  border-radius: 12px;
+  /* box-shadow: 0 0 2px #22C55E,   
+              0 0 2px #22C55E,
+              0 0 2px #22C55E;    */
+}
+
+/* animate course card border */
+:hover.course-card-custom-border{
+  border: 2px solid transparent;
+  border-radius: 12px;
+  background: linear-gradient(white, white) padding-box, repeating-linear-gradient(23deg, yellow, pink, purple 20px) border-box;
+  background-size: 200% 100%;
+  animation: animateCourseCardBorder 3s linear infinite;
+}
+
+
+/* animate course button -- n */
+
 @keyframes animateBuyCourseBorder {
   0% {
     background-position: 0 0;
@@ -190,7 +221,6 @@
     background-position: 200% 0;
   }
 }
-
 
 /* buy course button -- odd */
 :nth-child(odd).buy-course-custom-border{
@@ -211,8 +241,10 @@
 /* style buy course even */
 :hover:nth-child(even).buy-course-custom-border{
   background: linear-gradient(#14B8A6, #14B8A6) padding-box, repeating-linear-gradient(45deg, purple, green, yellow 20px) border-box;
+  color: white;
 }
 /* style buy course odd */
 :hover:nth-child(odd).buy-course-custom-border{
   background: linear-gradient(#A855F7, #A855F7) padding-box, repeating-linear-gradient(45deg, purple, green, yellow 20px) border-box;
+  color: white;
 }

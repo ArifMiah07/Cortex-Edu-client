@@ -25,7 +25,7 @@ export default function Courses({ data }: { data: TCourseData[] }) {
       <div className="border border-red-500 p-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {data.map((d, i) => (
           <div
-            className=" w-full flex flex-col justify-between border border-green-500 p-5 "
+            className=" w-full flex flex-col justify-between course-card-custom-border p-5 "
             key={i}>
             {/* image */}
             <div className="w-full flex items-center justify-center">
