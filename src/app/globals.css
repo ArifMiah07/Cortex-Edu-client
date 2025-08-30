@@ -248,3 +248,15 @@
   background: linear-gradient(#A855F7, #A855F7) padding-box, repeating-linear-gradient(45deg, purple, green, yellow 20px) border-box;
   color: white;
 }
+
+
+/* scroll bar */
+
+/* Hide scrollbar for all browsers */
+.scrollbar-none {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
