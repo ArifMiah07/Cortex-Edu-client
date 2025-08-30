@@ -19,10 +19,32 @@ export type TCourseData = {
 };
 
 export default function Courses({ data }: { data: TCourseData[] }) {
+
+  // add functionalities here
+
+
   return (
+    // this is course component
+    /**
+     * this page shows all the courses
+     * this page has all type of filters
+     * 
+     * 
+     * 
+     */
     <div className="flex flex-col gap-1 p-1">
-      <div className="w-full rounded-lg border border-yellow-500 px-3 py-2">this is courses page</div>
+      <div className="flex flex-row w-full gap-3 rounded-lg border border-yellow-500 px-3 py-2">
+        {/* any instruction or information*/}
+        <h1>this is courses page</h1>
+        {/* dynamic layout */}
+        <div className="flex gap-4">
+          <span>grid</span>
+          <span>list</span>
+        </div>
+      </div>
+      {/* all courses card container*/}
       <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
+        {/* courses card */}
         {data.map((d, i) => (
           <div
             className=" w-full flex flex-col justify-between course-card-custom-border p-5 "
