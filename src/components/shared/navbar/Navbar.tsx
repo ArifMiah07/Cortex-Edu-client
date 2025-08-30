@@ -1,5 +1,6 @@
-'use client'
+"use client";
 
+import { Search } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -43,8 +44,6 @@ export default function Navbar() {
     </>
   );
 
-  
-
   return (
     // This is Navbar
     /*---------------------------------
@@ -55,7 +54,7 @@ export default function Navbar() {
     | menu content --> Home, Courses, Library, Dashboard, Profile, Register/Login/Logout, Portfolio
     | add logical animation and dynamic navbar based on user scroll
     ----------------------------------*/
-    <nav className="w-full h-full flex flex-row items-center justify-between gap-3 p-6 border border-red-400  ">
+    <nav className="w-full h-full flex flex-row items-center justify-between gap-3 px-5 py-2 border border-red-400  ">
       {/* logo */}
       <Link href={"/"}>
         <div className="flex flex-row items-center justify-center gap-2 ">
@@ -73,6 +72,20 @@ export default function Navbar() {
           </span>
         </div>
       </Link>
+      {/* search */}
+      <div className="border border-gray-500 rounded-full px-3 relative flex grow items-center justify-center ">
+        <input
+          type="text"
+          placeholder="Search For anything"
+          className="relative grow text black  w-full  bg-white outline-none rounded-full px-5 py-3  "
+        />
+        <div className="flex items-center justify-center">
+          <button className="cursor-pointer">
+            {" "}
+            <Search />
+          </button>
+        </div>
+      </div>
       {/* menu */}
       <div className="flex flex-row gap-4 items-center justify-between ">
         <ul className="flex flex-row items-center justify-between gap-4 ">
@@ -81,6 +94,12 @@ export default function Navbar() {
       </div>
       {/* extra */}
       <div className="flex flex-row items-center justify-between gap-4">
+        {/* basic */}
+        <div className="flex gap-3 items-center justify-between">
+          <span>wishlist</span>
+          <span>cart</span>
+          <span>profile</span>
+        </div>
         <Link href={"/portfolio"}>Portfolio</Link>
       </div>
     </nav>
