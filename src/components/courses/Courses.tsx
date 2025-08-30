@@ -20,9 +20,9 @@ export type TCourseData = {
 
 export default function Courses({ data }: { data: TCourseData[] }) {
   return (
-    <div>
-      <div className="w-full border border-yellow-500 px-3 py-2">this is courses page</div>
-      <div className=" p-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
+    <div className="flex flex-col gap-1 p-1">
+      <div className="w-full rounded-lg border border-yellow-500 px-3 py-2">this is courses page</div>
+      <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
         {data.map((d, i) => (
           <div
             className=" w-full flex flex-col justify-between course-card-custom-border p-5 "

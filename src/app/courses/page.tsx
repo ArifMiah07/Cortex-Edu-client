@@ -7,15 +7,15 @@ export default function CoursesPage() {
   return (
     <div className="w-full min-h-screen flex flex-col items-start p-5">
       {/* path history */}
-      <div className="w-full border  p-2 flex flex-row items-start justify-start ">
-        <div className="border  flex flex-row">
-          <span className="bg-green-500 px-3">Home</span>
-          <span className=" border  bg-purple-400 clip-triangle"></span>
+      <div className="w-full flex flex-row items-start justify-start ">
+        <div className="flex flex-row">
+          <span className="bg-green-500 px-3 text-white ">Home</span>
+          <span className="bg-green-500 clip-triangle"></span>
         </div>
         <div className="flex flex-row">
-          <span className=" border  bg-purple-400 clip-triangle-reverse"></span>
-          <span className="border  bg-green-500 px-3">Courses</span>
-          <span className=" border  bg-purple-400 clip-triangle"></span>
+          <span className="bg-green-500 clip-triangle-reverse"></span>
+          <span className="bg-green-500 px-3 text-white ">Courses</span>
+          <span className="bg-green-500 clip-triangle"></span>
         </div>
       </div>
       {/* heading */}
@@ -25,9 +25,11 @@ export default function CoursesPage() {
           Discover and enroll in courses that match your interests
         </p>
       </div>
-      <div className="w-full p-6 border border-pink-600 ">filter</div>
+      <div className="w-full p-6 border rounded-lg  border-pink-600 ">
+        filter
+      </div>
       <div className="w-full flex flex-row ">
-        <div className="w-[400px] h-[700px] border border-green-600 ">
+        <div className="w-[400px] h-[700px] mt-1 rounded-lg  border border-green-600 ">
           filter
         </div>
         <Courses data={data} />
