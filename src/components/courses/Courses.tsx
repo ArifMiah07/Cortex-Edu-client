@@ -21,8 +21,8 @@ export type TCourseData = {
 export default function Courses({ data }: { data: TCourseData[] }) {
   return (
     <div>
-      <h1>this is courses page</h1>
-      <div className=" p-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="w-full border border-yellow-500 px-3 py-2">this is courses page</div>
+      <div className=" p-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
         {data.map((d, i) => (
           <div
             className=" w-full flex flex-col justify-between course-card-custom-border p-5 "
@@ -48,15 +48,15 @@ export default function Courses({ data }: { data: TCourseData[] }) {
             {/* other info */}
             <div className="flex flex-row gap-2 justify-between mt-2">
               <span className="flex flex-row justify-center items-center gap-[2px] text-md">
-                <Star />
+                <Star size={16} />
                 {d.rating}
               </span>
               <span className="flex flex-row justify-center items-center gap-[2px] text-md">
-                <Users />
+                <Users size={16} />
                 {d.totalEnrollment}
               </span>
               <span className="flex flex-row justify-center items-center gap-[2px] text-md">
-                <Clock4 />
+                <Clock4 size={16} />
                 {d.courseDuration}
               </span>
             </div>
@@ -69,10 +69,10 @@ export default function Courses({ data }: { data: TCourseData[] }) {
                 </span>
               </p>
               <button className="px-3 py-1 hover:bg-green-500 buy-course-custom-border text-black ">
-                <Link href={`/courses/${d.slug}`}>View Course</Link>
+                <Link href={`/courses/${d.slug}`}>View Details</Link>
               </button>
               <button className="px-3 py-1 buy-course-custom-border text-black ">
-                <Link href={`/courses/${d.slug}/payment`}>Buy Course</Link>
+                <Link href={`/courses/${d.slug}/payment`}>Buy</Link>
               </button>
             </div>
           </div>
