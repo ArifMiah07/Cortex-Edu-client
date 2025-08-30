@@ -1,6 +1,6 @@
 "use client";
 
-import { Search } from "lucide-react";
+import { Heart, Search, ShoppingCart, UserPen } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -96,9 +96,9 @@ export default function Navbar() {
       <div className="flex flex-row items-center justify-between gap-4">
         {/* basic */}
         <div className="flex gap-3 items-center justify-between">
-          <span>wishlist</span>
-          <span>cart</span>
-          <span>profile</span>
+          <span><Heart size={16} /></span>
+          <span><ShoppingCart size={16} /></span>
+          <span><UserPen size={16} /></span>
         </div>
         <Link href={"/portfolio"}>Portfolio</Link>
       </div>

@@ -10,7 +10,7 @@ export default function Header() {
       {courseCategories?.map((category, index: number) => (
         <li key={index} className="flex-shrink-0">
           <Link
-            href={`/${category[0]
+            href={`/courses/${category[0]
               .toString()
               .toLowerCase()
               .replace(/\s+/g, "-")}`}>
