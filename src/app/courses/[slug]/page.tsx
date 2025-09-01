@@ -1,8 +1,11 @@
-export default function CourseDetails({params}: {params:{slug: string}}){
-    console.log(params);
+import { TCourseData } from "@/lib/coursesData";
+
+export default async function CourseDetails({courseData}: {courseData: TCourseData}){
+    const slug  = courseData.slug;
+    // console.log(params);
     return(
         <div>
-            this is {params.slug}
+            this is {slug}
         </div>
     )
 }
