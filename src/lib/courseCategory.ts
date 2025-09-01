@@ -1,8 +1,14 @@
 // Define type for a single category tuple
 export type TCourseCategory = [string, string[]];
 
+/**
+ * [['0', []], ['0', []],...]
+ * [] --> ['0', []], ['0', []] --> '0', [] --> [] --> ''
+ * 
+ * 
+ */
 
-export const courseCategories = [
+export const courseCategories : TCourseCategory[] = [
   ["Web & Software Development", [
     "Web Development (Frontend, Backend, Full Stack)",
     "Mobile App Development",

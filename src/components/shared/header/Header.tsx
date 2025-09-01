@@ -5,6 +5,13 @@ import Navbar from "../navbar/Navbar";
 import courseCategories from "@/lib/courseCategory";
 
 export default function Header() {
+  // add all functionalities here
+  /**
+   * Header Section
+   *
+   */
+
+  // create nav links
   const subNavbarLinks = (
     <>
       {courseCategories?.map((category, index: number) => (
@@ -12,6 +19,7 @@ export default function Header() {
           <Link
             href={`/courses/${category[0]
               .toString()
+              .trim()
               .toLowerCase()
               .replace(/\s+/g, "-")}`}>
             <span className="text-black text-sm whitespace-nowrap px-3 py-0 block">
@@ -22,6 +30,14 @@ export default function Header() {
       ))}
     </>
   );
+courseCategories.forEach(([category, items]) => {
+  console.log("Category:", category); // string
+  items.forEach(item => console.log(" -", item)); // string[]
+});
+  //  courseCategories.map(([category, items], index) => {
+
+  //  })
+  // console.log(courseCategories.length);
 
   return (
     <div className="w-full flex flex-col">
