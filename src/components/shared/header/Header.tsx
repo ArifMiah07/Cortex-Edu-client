@@ -40,59 +40,63 @@ export default function Header() {
   // create nav links
   const subNavbarLinks = (
     <>
-      {courseCategories?.slice(0, courseCategories.length -4).map((category, index: number) => (
-        <li
-          onMouseEnter={() => handleMouseEnter(index)}
-          onMouseLeave={handleMouseLeave}
-          key={index}
-          className="relative flex-shrink-0 z-1 ">
-          <Link
-            href={`/courses/${category.category
-              .trim()
-              .toLowerCase()
-              .replace(/\s+/g, "-")}`}>
-            <span
-              className={`${
-                hoveredIndex === index && isHovered
-                  ? "bg-green-400 px-5 py-2"
-                  : ""
-              } text-black text-sm  px-3 py-0 `}>
-              {category.category}
-            </span>
-          </Link>
-          {/* showing dropdown link menu for subcategory */}
-          {hoveredIndex === index && (
-            /*
-            * ==================================================================
-            * TODO: fix that Bug --> currently using slice method to show less category
-            * ==================================================================
-            */
-            /** fixed or absolute using one them them has specific bug -->
-             * position absolute not works (hide that sub menu under ul or li) and using
-             * position fixed works for 1st appears items but not items that need scroll to view
-             */
-            <div className="fixed mt-2 bg-white border rounded shadow-md z-10">
-              {category.subCategory.map((subCat, subIndex) => (
-                <div
-                  className=" px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer whitespace-nowrap"
-                  key={subIndex}>
-                  {subCat}
-                </div>
-              ))}
-            </div>
-          )}
-        </li>
-      ))}
+      {courseCategories
+        ?.slice(0, courseCategories.length - 4)
+        .map((category, index: number) => (
+          <li
+            onMouseEnter={() => handleMouseEnter(index)}
+            onMouseLeave={handleMouseLeave}
+            key={index}
+            className="relative flex-shrink-0 z-1 ">
+            <Link
+              href={`/courses/${category.category
+                .trim()
+                .toLowerCase()
+                .replace(/\s+/g, "-")}`}>
+              <span
+                className={`${
+                  hoveredIndex === index && isHovered
+                    ? "bg-green-400 px-5 py-2"
+                    : ""
+                } text-black text-sm  px-3 py-0 `}>
+                {category.category}
+              </span>
+            </Link>
+            {/* showing dropdown link menu for subcategory */}
+            {hoveredIndex === index && (
+              /*
+               * ==================================================================
+               * TODO: fix that Bug --> currently using slice method to show less category
+               * ==================================================================
+               */
+              /** fixed or absolute using one them them has specific bug -->
+               * position absolute not works (hide that sub menu under ul or li) and using
+               * position fixed works for 1st appears items but not items that need scroll to view
+               */
+              <div className="fixed mt-2 bg-white border rounded shadow-md z-10">
+                {category.subCategory.map((subCat, subIndex) => (
+                  <div
+                    className=" px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer whitespace-nowrap"
+                    key={subIndex}>
+                    <Link
+                      href={`/courses/${category.category
+                        .trim()
+                        .toLowerCase()
+                        .replace(/\s+/g, "-")}/${subCat
+                        .toLowerCase()
+                        .trim()
+                        .split(" ")
+                        .join("-")}`}>
+                      <span>{subCat}</span>
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            )}
+          </li>
+        ))}
     </>
   );
-
-  courseCategories.map((category, index) => {
-    console.log(index, category, category.category, category.subCategory);
-    category.subCategory.forEach((sc, i) => {
-      console.log(i, sc);
-    });
-  });
-  console.log(courseCategories.length);
 
   return (
     //
@@ -115,8 +119,8 @@ export default function Header() {
       {/* actual navigation */}
       <Navbar />
       {/* Sub-navbar */}
-      <section className="w-full border border-purple-500">
-        <nav className="w-full overflow-x-auto scrollbar-none">
+      <section className="w-full overflow-x-auto scrollbar-none border border-purple-500">
+        <nav className="w-full">
           <ul className="flex gap-3">{subNavbarLinks}</ul>
         </nav>
       </section>
