@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Navbar from "../navbar/Navbar";
 import courseCategories from "@/lib/courseCategory";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 export default function Header() {
   // add all functionalities here
@@ -14,14 +14,34 @@ export default function Header() {
 
   // subcategory by mouse hover
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null)
   
+
+  // handle mouse enter
+  const handleMouseEnter = (index:number)=> {
+    // if before time ends
+    if(timeoutRef.current){
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+    setHoveredIndex(index);
+  }
+
+  // handle mouse leave
+  const handleMouseLeave = ()=> {
+      // wait 1 sec before close sub menu
+      timeoutRef.current = setTimeout(() => {
+        setHoveredIndex(null);
+      }, (1000));
+  }
+
   // create nav links
   const subNavbarLinks = (
     <>
       {courseCategories?.map((category, index: number) => (
         <li
-          onMouseEnter={() => setHoveredIndex(index)}
-          onMouseLeave={() => setHoveredIndex(null)}
+          onMouseEnter={() => handleMouseEnter(index)}
+          onMouseLeave={handleMouseLeave}
           key={index}
           className="relative flex-shrink-0 z-1 ">
           <Link
