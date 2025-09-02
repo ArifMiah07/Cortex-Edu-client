@@ -68,8 +68,7 @@ export default function Header() {
                * ==================================================================
                * TODO: fix that Bug --> currently using slice method to show less category
                * ==================================================================
-               */
-              /** fixed or absolute using one them them has specific bug -->
+               * fixed or absolute using one them them has specific bug -->
                * position absolute not works (hide that sub menu under ul or li) and using
                * position fixed works for 1st appears items but not items that need scroll to view
                */
