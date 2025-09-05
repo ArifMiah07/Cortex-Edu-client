@@ -5,7 +5,7 @@ export default function CoursesPage() {
   const data = coursesData;
 
   return (
-    <div className="w-full min-h-screen flex flex-col items-start p-5">
+    <div className="w-full min-h-screen flex flex-col items-start p-5 z-1">
       {/* path history */}
       <div className="w-full flex flex-row items-start justify-start ">
         <div className="flex flex-row">
