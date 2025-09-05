@@ -1,8 +1,8 @@
 "use client";
+import { TCourseData } from "@/types";
 import { Clock4, Star, Users } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { TCourseData } from "../Courses";
 
 export default function CourseCard({ data }: { data: TCourseData[] }) {
   return (
@@ -47,7 +47,7 @@ export default function CourseCard({ data }: { data: TCourseData[] }) {
               </span>
             </p>
             <button className="px-3 py-1 hover:bg-green-500 buy-course-custom-border text-black ">
-              <Link href={`/courses/${d.slug}`}>View Details</Link>
+              <Link href={`/courses/${d.slug}`}>Details</Link>
             </button>
             <button className="px-3 py-1 buy-course-custom-border text-black ">
               <Link href={`/courses/${d.slug}/payment`}>Buy</Link>
