@@ -15,7 +15,7 @@ export default function Courses({ data }: { data: TCourseData[] }) {
      *
      *
      */
-    <div className="flex flex-col gap-1 p-1">
+    <div className=" flex flex-col gap-1 p-1">
       <div className="w-full flex flex-row gap-3 rounded-lg bg-green-200 border border-yellow-500 px-1 py-1">
         {/* any instruction or information*/}
         {/* <h1>this is courses page</h1> */}
