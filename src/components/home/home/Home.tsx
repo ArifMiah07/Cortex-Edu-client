@@ -21,6 +21,10 @@ export default function Home() {
     <>
       {/* hero section in home page */}
       <section className="flex flex-row gap-5 items-center justify-center w-full min-h-[55vh] bg-teal-100 border border-amber-200 p-12">
+        {/* welcome section */}
+        <div>Welcome Welcome back, {'David'}</div>
+
+        {/* swiper / carousel section */}
         <div className=" w-[450px] flex flex-col bg-white p-6 border border-gray-300 drop-shadow-lg ">
           <div className="flex flex-col gap-3">
             <h1 className="text-black text-3xl font-semibold ">
