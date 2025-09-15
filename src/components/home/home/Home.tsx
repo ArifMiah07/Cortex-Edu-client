@@ -18,17 +18,18 @@ export default function Home() {
      *
      *
      */
-    <>
+    <section className="w-full min-h-screen">
       {/* hero section in home page */}
       {/* welcome section */}
-      <section>
+      <section className="w-full flex flex-row gap-5 p-5">
         {/* profile */}
         <div className="w-10 h-10 rounded-full">
-          <div className="w-full h-full text-lg font-bold">A</div>
+          <div className="w-full h-full flex flex-col items-center justify-center text-lg font-bold bg-black text-white rounded-full p-2">DA</div>
         </div>
         {/* text heading */}
-        <div>
-          <p>Welcome Welcome back, {"David"}</p>
+        <div className="flex flex-col items-start  ">
+          <p className="text-2xl font-bold ">Welcome back, {"David"}</p>
+          <p>Full Stack Web Developer</p>
         </div>
       </section>
       {/* swiper / carousel section */}
@@ -56,6 +57,6 @@ export default function Home() {
         <div></div>
         <div className="w-full h-full   "></div>
       </section>
-    </>
+    </section>
   );
 }
