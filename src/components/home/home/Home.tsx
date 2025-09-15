@@ -20,11 +20,19 @@ export default function Home() {
      */
     <>
       {/* hero section in home page */}
+      {/* welcome section */}
+      <section>
+        {/* profile */}
+        <div className="w-10 h-10 rounded-full">
+          <div className="w-full h-full text-lg font-bold">A</div>
+        </div>
+        {/* text heading */}
+        <div>
+          <p>Welcome Welcome back, {"David"}</p>
+        </div>
+      </section>
+      {/* swiper / carousel section */}
       <section className="flex flex-row gap-5 items-center justify-center w-full min-h-[55vh] bg-teal-100 border border-amber-200 p-12">
-        {/* welcome section */}
-        <div>Welcome Welcome back, {'David'}</div>
-
-        {/* swiper / carousel section */}
         <div className=" w-[450px] flex flex-col bg-white p-6 border border-gray-300 drop-shadow-lg ">
           <div className="flex flex-col gap-3">
             <h1 className="text-black text-3xl font-semibold ">
